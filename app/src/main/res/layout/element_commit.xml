@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="commit" type="com.e.legion.test.app.entities.Commit"/>
+        <variable name="dateFormat" type="java.text.DateFormat"/>
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+        <import type="java.util.Date"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardBackgroundColor="@color/switch_thumb_normal_material_light"
+        card_view:cardElevation="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/iv_commit_author"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:riv_corner_radius="20dp"
+                    android:src="@drawable/github_photo"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/layout_padding">
+
+                    <TextView
+                        android:id="@+id/tv_commit_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text='@{commit.committer.login}' />
+
+                    <TextView
+                        android:id="@+id/tv_commit_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text='@{commit.commit.committer.name}'
+                        android:visibility='@{!TextUtils.isEmpty(commit.commit.committer.name) ? View.VISIBLE : View.GONE}'/>
+
+                    <TextView
+                        android:id="@+id/tv_commit_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text='@{dateFormat.format(commit.commit.committer.date)}'
+                        android:visibility='@{commit.commit.committer.date != null ? View.VISIBLE : View.GONE}'/>
+
+                    <TextView
+                        android:id="@+id/tv_detail_repo_forked_source"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text='@{@string/sha + commit.sha.substring(0,6)}' />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_commit_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/primary_dark_material_dark"
+                android:text='@{commit.commit.message}'
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

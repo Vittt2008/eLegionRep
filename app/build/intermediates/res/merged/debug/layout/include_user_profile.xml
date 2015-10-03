@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    
+                                                                          
+                                          
+                                               
+           
+
+
+    <LinearLayout
+        android:id="@+id/ll_profile"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="?android:windowContentOverlay"
+        android:alpha="0"
+        android:padding="@dimen/layout_padding" android:tag="layout/include_user_profile_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:alpha="0"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/layout_padding">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary_dark_material_dark"
+                    android:tag="binding_1"                   
+                    android:paddingBottom="@dimen/textview_padding"
+                                                                                                    />
+
+                <TextView
+                    android:id="@+id/tv_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary_dark_material_dark"
+                    android:tag="binding_2"                         
+                    android:paddingBottom="@dimen/textview_padding"
+                                                                                                       />
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary_dark_material_dark"
+                    android:tag="binding_3"                           
+                    android:paddingBottom="@dimen/textview_padding"
+                                                                                                        />
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary_dark_material_dark"
+                    android:tag="binding_4"                     
+                    android:paddingBottom="@dimen/textview_padding"
+                                                                                                     />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/layout_padding">
+
+            <TextView
+                android:id="@+id/tv_public_repos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/primary_dark_material_dark"
+                android:tag="binding_5"                                   
+                android:paddingBottom="@dimen/textview_padding"
+                                                                               />
+
+            <TextView
+                android:id="@+id/tv_total_private_repos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/primary_dark_material_dark"
+                android:tag="binding_6"                                                 
+                android:paddingBottom="@dimen/textview_padding"
+                                                                               />
+
+            <TextView
+                android:id="@+id/tv_followers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/primary_dark_material_dark"
+                android:tag="binding_7"                             
+                android:paddingBottom="@dimen/textview_padding"
+                                                                               />
+
+            <TextView
+                android:id="@+id/tv_following"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/primary_dark_material_dark"
+                android:tag="binding_8"                             
+                android:paddingBottom="@dimen/textview_padding"
+                                                                               />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/exit"
+            android:tag="binding_9"                                        />
+
+    </LinearLayout>
+
+         <!-- From: file:/F:/Stash/eLegionTestApp/app/src/main/res/layout/include_user_profile.xml -->

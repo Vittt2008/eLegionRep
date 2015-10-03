@@ -1,0 +1,23 @@
+<resources>
+    <style name="Theme.Legion.App" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/legion_blue</item>
+        <item name="colorPrimaryDark">@color/legion_dark_blue</item>
+        <item name="colorAccent">@color/legion_pink</item>
+    </style>
+
+    <style name="Theme.Legion.App.Toolbar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/legion_blue</item>
+        <item name="colorPrimaryDark">@color/legion_dark_blue</item>
+        <item name="colorAccent">@color/legion_pink</item>
+    </style>
+
+    <style name="Theme.Legion.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/Theme.Legion.Tab.Button</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="android:background">@color/legion_blue</item>
+    </style>
+
+    <style name="Theme.Legion.Tab.Button" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textColor">@color/legion_gray</item>
+    </style>
+</resources>

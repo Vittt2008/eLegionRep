@@ -1,0 +1,136 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="repo" type="com.e.legion.test.app.entities.Repo"/>
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardBackgroundColor="@color/switch_thumb_normal_material_light"
+        card_view:cardElevation="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:visibility='@{repo != null ? View.VISIBLE : View.GONE}'>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="12dp">
+
+                <ImageView
+                    android:id="@+id/iv_author_photo"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:alpha="0"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/layout_padding">
+
+                    <com.e.legion.test.app.controls.MarqueeTextView
+                        android:id="@+id/tv_detail_repo_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text='@{repo.name}'
+                        android:paddingBottom="@dimen/textview_padding" />
+
+                    <com.e.legion.test.app.controls.MarqueeTextView
+                        android:id="@+id/tv_detail_repo_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text='@{repo.full_name}'
+                        android:visibility='@{!TextUtils.isEmpty(repo.full_name) ? View.VISIBLE : View.GONE}'/>
+
+                    <com.e.legion.test.app.controls.MarqueeTextView
+                        android:id="@+id/tv_detail_repo_forked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text='@{@string/fork_symbol + repo.parent.full_name}'
+                        android:visibility='@{(TextUtils.isEmpty(repo.parent.full_name) || (repo.full_name.equalsIgnoreCase(repo.parent.full_name))) ? View.GONE : View.VISIBLE}'/>
+
+                    <com.e.legion.test.app.controls.MarqueeTextView
+                        android:id="@+id/tv_detail_repo_forked_source"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_marginLeft="10dp"
+                        android:text='@{@string/fork_symbol + repo.source.full_name}'
+                        android:visibility='@{(TextUtils.isEmpty(repo.source.full_name) || (repo.parent.full_name.equalsIgnoreCase(repo.source.full_name))) ? View.GONE : View.VISIBLE}'/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#CCCCCC"
+                android:visibility='@{repo != null ? View.VISIBLE : View.GONE}'>
+
+
+                <com.e.legion.test.app.controls.GitHubTextView
+                    android:id="@+id/tv_repo_watch"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text='@{@string/watch + repo.watches}'
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+
+                <com.e.legion.test.app.controls.GitHubTextView
+                    android:id="@+id/tv_repo_star"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text='@{@string/star + repo.stars}'
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+
+                <com.e.legion.test.app.controls.GitHubTextView
+                    android:id="@+id/tv_repo_fork"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text='@{@string/fork + repo.forks}'
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+            </TableRow>
+
+            <TextView
+                android:id="@+id/tv_repo_detail_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/primary_dark_material_dark"
+                android:text='@{repo.description}'
+                android:layout_margin="12dp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

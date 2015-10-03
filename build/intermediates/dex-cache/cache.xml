@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\Stash\eLegionTestApp\app\build\intermediates\exploded-aar\fr.avianey.com.viewpagerindicator\library\2.4.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="86f452c126cb92a79e1dcf08efec5404529b698e">
+        <dex dex="F:\Stash\eLegionTestApp\app\build\intermediates\pre-dexed\debug\classes-a82fe4091669a5840d6ea205b352f93e084c30b0.jar" />
+    </item>
+
+</items>

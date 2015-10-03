@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">e-Legion Test App</string>
+    <string name="scope">user,repo</string>
+    <string name="client_id">689b125ac38c542356ce</string>
+    <string name="client_secret">62b46fe2c9284d6f071bf6c8efbc911d1fe99294</string>
+
+    <string name="snackbar_ok">OK</string>
+    <string name="profile">Профиль</string>
+    <string name="repository">Репозитории</string>
+    <string name="exit">Выйти из профиля</string>
+
+    <string name="name">"Имя: "</string>
+    <string name="company">"Компания: "</string>
+    <string name="location">"Место: "</string>
+    <string name="email">"Email: "</string>
+
+    <string name="public_repos">"Публичных репозиториев: "</string>
+    <string name="total_private_repos">"Приватных репозиториев: "</string>
+    <string name="followers">"Подписки: "</string>
+    <string name="following">"Подписчики: "</string>
+
+    <string name="watch">"\uF04E "</string>
+    <string name="star">"\uF02A "</string>
+    <string name="fork">"\uF002 "</string>
+    <string name="fork_symbol">"\u21B3 "</string>
+
+    <string name="sha">"SHA: "</string>
+
+    <string name="profile_error">Ошибка загрузки профиля</string>
+    <string name="repos_error">Ошибка загрузки списка репозиториев</string>
+    <string name="repo_detail_error">"Ошибка загрузки информации о репозитории "</string>
+</resources>

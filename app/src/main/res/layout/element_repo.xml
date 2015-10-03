@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="repo" type="com.e.legion.test.app.entities.Repo"/>
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardBackgroundColor="@color/switch_thumb_normal_material_light"
+        card_view:cardElevation="5dp"
+        android:layout_margin="10dp"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_repo_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@{repo.name}"
+                    android:layout_gravity="bottom"/>
+
+                <ImageView
+                    android:id="@+id/iv_private"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/textview_padding"
+                    android:src="@{repo.is_private ? @drawable/ic_private : @drawable/ic_not_private}"/>
+
+                <!--<ImageView
+                    android:id="@+id/iv_fork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_fork"
+                    android:scaleType="fitEnd"
+                    android:visibility="@{repo.fork ? View.VISIBLE : View.GONE}"/>-->
+
+                <com.e.legion.test.app.controls.GitHubTextView
+                    android:id="@+id/tv_fork"
+                    android:layout_width="match_parent"
+                    android:minWidth="30dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="30sp"
+                    android:text="@string/fork"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:visibility="@{repo.fork ? View.VISIBLE : View.GONE}"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_repo_fullname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@{repo.full_name}"
+                android:layout_marginTop="@dimen/textview_padding"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="6dp"
+                android:visibility="@{TextUtils.isEmpty(repo.description) ? View.GONE : View.VISIBLE}"/>
+
+            <TextView
+                android:id="@+id/tv_repo_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@{repo.description}"
+                android:layout_marginTop="@dimen/textview_padding"
+                android:visibility="@{TextUtils.isEmpty(repo.description) ? View.GONE : View.VISIBLE}"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>
